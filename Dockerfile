@@ -13,8 +13,8 @@ RUN apt-get -y install ca-certificates && update-ca-certificates
 
 
 FROM alpine
-COPY --from=sources /src/hello /etc/hello
+COPY --from=sources /src/go-http-test /etc/go-http-test
 COPY --from=ssl /etc/ssl/certs /etc/ssl/certs
 
 EXPOSE 9080
-CMD /etc/hello
+CMD /etc/go-http-test
